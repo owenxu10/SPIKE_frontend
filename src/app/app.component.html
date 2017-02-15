@@ -1,3 +1,9 @@
-<h1>
-  {{title}}
-</h1>
+<h2>
+  SPIKE
+</h2>
+
+<textarea rows="3" cols="60" [(ngModel)]="question"></textarea>
+
+<div><button (click)="getQuestions()">确定</button></div>
+
+{{questionSet | async}}
