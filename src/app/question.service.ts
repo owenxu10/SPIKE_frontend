@@ -1,19 +1,32 @@
 import { Injectable } from '@angular/core';
 import { Http }       from '@angular/http';
-import { Observable }     from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+
+import 'rxjs/add/operator/toPromise';
 
 
 @Injectable()
-export class QuestionService {
+export class questionService {
 
-  constructor(private http: Http) { }
+    constructor(private http: Http) { }
   
-  search(term: string): Observable<Hero[]> {
-    return this.http
-               .get(`app/heroes/?name=${term}`)
-               .map(response => response.json().data as Hero[]);
-  }
+    getResults(description:string): Promise<string> {
+    return this.http.get('/api/things/{'+description+'}')
+               .toPromise()
+               .then(res => res.json().message as string)
+               .catch(this.handleError);
+    }
+
+    getResultsSlowly(description:string): Promise<string> {
+	  return new Promise(resolve => {
+	    // Simulate server latency with 2 second delay
+	    setTimeout(() => resolve(this.getResults(description)), 4000);
+	  });
+	}
+
+	private handleError(error: any): Promise<any> {
+	  console.error('An error occurred', error); // for demo purposes only
+	  return Promise.reject(error.message || error);
+	}
 }
 
 

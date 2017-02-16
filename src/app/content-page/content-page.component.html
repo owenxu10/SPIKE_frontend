@@ -1,0 +1,23 @@
+
+<div class="content-wrap">
+    <div class="content">
+
+		<h2 class="site__title">
+		  SPIKE自动分诊
+		</h2>
+
+		<p>
+		  <md-input-container class="example-full-width" style="font-size: 20px;">
+			<textarea mdInput placeholder="描述" rows="2" cols="70" [(ngModel)]="description">
+			</textarea>
+		  </md-input-container>
+		</p>
+
+		<div *ngIf="!isLoading"><button md-button style="font-size: 15px;" (click)="getResult()">确定</button></div>
+		<div *ngIf="isLoading" class="loading-btn"><loading-animation></loading-animation></div>
+		
+
+		<result-board *ngIf="isShowResult" [result]="result"></result-board>
+
+    </div>
+</div>
