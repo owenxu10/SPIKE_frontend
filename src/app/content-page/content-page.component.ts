@@ -30,8 +30,8 @@ export class ContentPageComponent implements OnInit {
 		this.isShowResult = true;
 		this.isLoading = true;
 
-		// this.questionService.getResults(this.description)
-		this.questionService.getResultsSlowly(this.description)
+		this.questionService.getResults(this.description)
+		//this.questionService.getResultsSlowly(this.description)
         .then(result => {
         	this.result = result;
         	this.isLoading = false;
