@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'loading-animation',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loading-animation.component.css']
 })
 export class LoadingAnimationComponent implements OnInit {
+  
+  @Input()
+  showAnimation:boolean;
 
   constructor() { }
 

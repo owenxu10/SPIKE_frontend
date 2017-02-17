@@ -3,9 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Http }       from '@angular/http';
 import { questionService } from '../question.service';
 import { HeaderComponent } from '../header/header.component';
-import 'rxjs/add/operator/debounceTime'
-import 'rxjs/add/operator/map'
-
+import 'rxjs/add/operator/catch';
 
 @Component({
   selector: 'content-page',
@@ -17,27 +15,31 @@ export class ContentPageComponent implements OnInit {
   	result:any;
 	description:string;
 	isShowResult:boolean;
-	isLoading:boolean;
+	isShowAnimation:boolean;
 
 	constructor(private http:Http,private questionService:questionService){}
 
 	ngOnInit() {
-		this.isLoading = false;
 		this.isShowResult = false;
+		this.isShowAnimation = false;
     }
 
 	getResult(){
 		this.isShowResult = true;
-		this.isLoading = true;
-
 		this.questionService.getResults(this.description)
 		//this.questionService.getResultsSlowly(this.description)
         .then(result => {
+        	this.isShowAnimation = false;
         	this.result = result;
-        	this.isLoading = false;
-        	console.log(this.result);
+        })
+        .catch(error=>{
+        	this.result = error.statusText;
         });
 
-		}
+	}
 
+	onClickTextarea()
+	{
+		this.isShowAnimation = true;
+	}
 }

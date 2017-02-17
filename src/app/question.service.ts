@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http }       from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
-
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class questionService {
@@ -13,7 +13,10 @@ export class questionService {
     return this.http.get('/api/things/{'+description+'}')
                .toPromise()
                .then(res => res.json().message as string)
-               .catch(this.handleError);
+               .catch(error=>{
+               		console.error('An error occurred', error);
+               		return Promise.reject(error.message || error);
+               });
     }
 
     getResultsSlowly(description:string): Promise<string> {
@@ -24,7 +27,7 @@ export class questionService {
 	}
 
 	private handleError(error: any): Promise<any> {
-	  console.error('An error occurred', error); // for demo purposes only
+	  console.error('An error occurred', error);
 	  return Promise.reject(error.message || error);
 	}
 }

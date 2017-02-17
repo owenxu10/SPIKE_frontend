@@ -13,30 +13,18 @@
   font-size: 5rem;
   font-weight: 200;
   line-height: 1;
-  color: #f35626;  
-  background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);  
+  color: green;  
+  background-image: -webkit-linear-gradient(92deg,green,#feab3a);  
   -webkit-background-clip: text;  
   -webkit-text-fill-color: transparent;  
   -webkit-animation: hue 60s infinite linear;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }  
 
-@-webkit-keyframes hue {  
-  from {  
-    -webkit-filter: hue-rotate(0deg);  
-  }  
-  
-  to {  
-    -webkit-filter: hue-rotate(-360deg);  
-  }  
-}  
-
-.loading-btn{
-  height: 14px;
-  width: 88px;
-  padding-left:72px;
-  padding-top:22px;
-  margin:0 auto;
+.showAnimation{
+  display:initial;
 }
 
-
+.hideAnimation{
+  display:none;
+}
