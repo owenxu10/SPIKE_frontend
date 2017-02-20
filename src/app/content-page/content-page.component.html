@@ -8,6 +8,7 @@
 
 		<loading-animation [showAnimation]="isShowAnimation" ></loading-animation>
 
+		<p style="margin-top:30px;color:#888888">{{message}}</p>
 		<p>
 		  <md-input-container class="example-full-width" style="font-size: 20px;">
 			<textarea mdInput placeholder="描述" rows="2" cols="70" [(ngModel)]="description"	(click)="onClickTextarea()">
@@ -15,10 +16,10 @@
 		  </md-input-container>
 		</p>
 
-		<button md-button style="font-size: 15px;" (click)="getResult()">确定</button>	
+		<button md-button style="font-size: 15px;" (click)="getResult()">开始分诊</button>	
 
 		
-		<result-board *ngIf="isShowResult" [result]="result"></result-board>
+		<result-board *ngIf="isShowResult" [category]="category" [desc]="desc"></result-board>
 
     </div>
 </div>

@@ -1,10 +1,33 @@
 <md-card class="card">
-  <md-card-header>
-    <md-card-title>分诊结果</md-card-title>
-  </md-card-header>
-  <md-card-content>
-    <p style="text-align: center">
-    	{{result}}
-    </p>
-  </md-card-content>
+    <p class="card-title" >分诊结果</p>
+    <hr>
+ 
+  	<md-grid-list cols="2" rowHeight="300px">
+	  <div class="card-tile-left">
+	  	<md-list>
+	  	 <md-list-item>
+	  	 	<h4>已识别症状</h4>
+	  	 </md-list-item>
+		 <md-list-item *ngFor="let d of desc"> <p class="tile-text">{{d.name}}</p> </md-list-item>
+		</md-list>
+	  </div>
+
+	  <div class="card-tile-right">
+	    <md-list >
+	     <md-list-item>
+	  	 	<h4>推荐科室</h4>
+	  	 </md-list-item>
+	  	 <md-list-item>
+	  	 	<p class="tile-text">{{category[0].name}}</p>
+	  	 </md-list-item>
+	  	 <md-list-item *ngIf="category.length >1">
+	  	 	<h4>其他科室</h4>
+	  	 </md-list-item>
+	  	 <md-list-item *ngFor="let cate of category | slice:1 ">
+	  	 	<p class="tile-text"> {{cate.name}} </p> 
+	  	 </md-list-item>
+	  	</md-list>
+	  </div>
+	</md-grid-list>
+    
 </md-card>

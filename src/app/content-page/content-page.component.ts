@@ -11,11 +11,14 @@ import 'rxjs/add/operator/catch';
   styleUrls: ['./content-page.component.css']
 })
 export class ContentPageComponent implements OnInit {
-
-  	result:any;
+	
+	result:any;
 	description:string;
 	isShowResult:boolean;
 	isShowAnimation:boolean;
+	desc:any;
+	category:any;
+	message:string;
 
 	constructor(private http:Http,private questionService:questionService){}
 
@@ -25,15 +28,26 @@ export class ContentPageComponent implements OnInit {
     }
 
 	getResult(){
-		this.isShowResult = true;
 		this.questionService.getResults(this.description)
 		//this.questionService.getResultsSlowly(this.description)
         .then(result => {
         	this.isShowAnimation = false;
+
         	this.result = result;
+        	let code = this.result['code']
+        	if(code == 1){
+        		this.isShowResult = false;
+        		this.message = "需要更多描述"
+        	}
+        	else{
+        		this.isShowResult = true;
+        		this.category = this.result['category']
+        		this.desc = this.result['desc']
+        	}
+
         })
         .catch(error=>{
-        	this.result = error.statusText;
+        	this.desc = error.statusText;
         });
 
 	}
@@ -41,5 +55,6 @@ export class ContentPageComponent implements OnInit {
 	onClickTextarea()
 	{
 		this.isShowAnimation = true;
+		this.message = '';
 	}
 }

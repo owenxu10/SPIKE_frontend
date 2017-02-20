@@ -2,3 +2,22 @@
 	width:50%;
 	margin:30px auto;
 }
+
+.card-title{
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.card-tile-right{
+	left: calc((50% - 0.5px) * 1); 
+	width: calc((50% - 0.5px) * 1); 
+	position: absolute;
+
+}.card-tile-left{ 
+	width: calc((50% - 0.5px) * 1); 
+	position: absolute;
+}
+
+.tile-text{
+	padding-left: calc((25% - 0.75px) + 1px);
+}

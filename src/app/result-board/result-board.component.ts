@@ -8,12 +8,14 @@ import { Component, OnInit, Input} from '@angular/core';
 export class ResultBoardComponent implements OnInit {
   
   @Input()
-  result: string;
+  desc: string[];
+
+  @Input()
+  category: string[];
 
   constructor() {}
 
   ngOnInit() {
-
   }
 
 }

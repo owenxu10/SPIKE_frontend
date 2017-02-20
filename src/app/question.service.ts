@@ -12,7 +12,7 @@ export class questionService {
     getResults(description:string): Promise<string> {
     return this.http.get('/api/things/{'+description+'}')
                .toPromise()
-               .then(res => res.json().message as string)
+               .then(res => res.json())
                .catch(error=>{
                		console.error('An error occurred', error);
                		return Promise.reject(error.message || error);
