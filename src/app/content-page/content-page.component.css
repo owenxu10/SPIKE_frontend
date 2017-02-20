@@ -1,6 +1,4 @@
-.content-wrap {
-    padding: 28px 0;
-}
+
 
 .content {
     width: 1280px;
@@ -13,13 +11,13 @@
   font-size: 5rem;
   font-weight: 200;
   line-height: 1;
-  color: green;  
-  background-image: -webkit-linear-gradient(92deg,green,#feab3a);  
-  -webkit-background-clip: text;  
-  -webkit-text-fill-color: transparent;  
+  color: green;
+  background-image: -webkit-linear-gradient(92deg,green,#feab3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   -webkit-animation: hue 60s infinite linear;
   margin-bottom: 30px;
-}  
+}
 
 .showAnimation{
   display:initial;
