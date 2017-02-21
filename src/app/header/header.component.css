@@ -1,25 +1,13 @@
 .header {
-    width: 100%;
-    position: relative;
-    box-shadow: 1px 1px 2px #ccc;
+  width: 100%;box-shadow: black 0 -1px 3px;
 }
 
-.header .header-content {
-    width: 1280px;
-    max-width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+.logo {
+  width: 150px;
+  height: 80px;
+  overflow: hidden;
 
-.header-content .logo {
-    width: 150px;
-    overflow: hidden;
+  margin-left: 20px;
+  background: url("assets/logo.png");
+  background-size: contain;
 }
-.header-content .logo img {
-    display: block;
-    width: 100%;
-    margin-top: -10px;
-}
-
