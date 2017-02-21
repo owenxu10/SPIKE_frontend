@@ -35,6 +35,10 @@ export class ContentPageComponent implements OnInit {
   }
 
 	getResult(){
+    if(this.hintText!="") {
+      this.description = this.hintText;
+      this.hintText = "";
+    }
 		this.questionService.getResults(this.description)
 		//this.questionService.getResultsSlowly(this.description)
         .then(result => {
