@@ -6,15 +6,16 @@
 .card-title{
 	font-weight: bold;
 	font-size: 16px;
+  text-align: center;
 }
 
 .card-tile-right{
-	left: calc((50% - 0.5px) * 1); 
-	width: calc((50% - 0.5px) * 1); 
+	left: calc((50% - 0.5px) * 1);
+	width: calc((50% - 0.5px) * 1);
 	position: absolute;
 
-}.card-tile-left{ 
-	width: calc((50% - 0.5px) * 1); 
+}.card-tile-left{
+	width: calc((50% - 0.5px) * 1);
 	position: absolute;
 }
 

@@ -4,7 +4,7 @@
     width: 1280px;
     max-width: 90%;
     margin: 0 auto;
-    text-align:center
+    text-align:center;
 }
 
 .site__title {
@@ -17,12 +17,4 @@
   -webkit-text-fill-color: transparent;
   -webkit-animation: hue 60s infinite linear;
   margin-bottom: 30px;
-}
-
-.showAnimation{
-  display:initial;
-}
-
-.hideAnimation{
-  display:none;
 }
