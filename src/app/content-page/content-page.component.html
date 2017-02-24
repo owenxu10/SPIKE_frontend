@@ -1,22 +1,20 @@
-
-
     <div class="content">
 
-		<h2 class="site__title">
-		  SPIKE自动分诊
-		</h2>
+      <h2 class="site__title">
+        SPIKE自动分诊
+      </h2>
 
-		<loading-animation [showAnimation]="isShowAnimation" ></loading-animation>
+      <loading-animation [showAnimation]="isShowAnimation" ></loading-animation>
 
-		<p style="margin-top:30px;color:#888888">{{message}}</p>
-		<p>
-		  <md-input-container class="example-full-width" style="font-size: 14px;width:55%;">
-			<textarea mdInput style="white-space:pre-line" placeholder="描述  {{hintText}}" rows="2" cols="70" [(ngModel)]="description"
-			(click)="onClickTextarea()"></textarea>
-		  </md-input-container>
-		</p>
+      <p style="margin-top:30px;color:#888888">{{message}}</p>
+      <p>
+        <md-input-container class="example-full-width" style="font-size: 14px;width:55%;">
+        <textarea mdInput style="white-space:pre-line" placeholder="描述  {{hintText}}" rows="2" cols="70" [(ngModel)]="description"
+        (click)="onClickTextarea()"></textarea>
+        </md-input-container>
+      </p>
 
-		<button md-button style="font-size: 15px;" (click)="getResult()">开始分诊</button>
+      <button md-button style="font-size: 15px;" (click)="getResult()">开始分诊</button>
 
     </div>
 
